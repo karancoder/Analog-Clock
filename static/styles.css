@@ -33,6 +33,37 @@
     }
 }
 
+body.dark-theme {
+    --title-color: hsl(var(--hue-color), 12%, 95%);
+    --text-color: hsl(var(--hue-color), 12%, 75%);
+    --body-color: hsl(var(--hue-color), 10%, 16%);
+}
+
+.clock__theme {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: flex;
+    padding: 0.25rem;
+    border-radius: 50%;
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 0%, 100%, 1),
+        inset 1px 1px 1px hsla(var(--hue-color), 30%, 86%, 1);
+    color: var(--first-color);
+    cursor: pointer;
+}
+
+.dark-theme .clock__circle {
+    box-shadow: 6px 6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+        -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+        inset -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+        inset 6px 6px 16px hsla(var(--hue-color), 8%, 12%, 1);
+}
+
+.dark-theme .clock__theme {
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1),
+        inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -135,7 +166,7 @@ a {
     position: absolute;
     display: flex;
     justify-content: center;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 
 .clock__hour {
@@ -220,4 +251,15 @@ a {
     text-align: center;
     font-size: var(--s-fs);
     font-weight: var(--m-fw);
+}
+
+@media screen and (min-width: 968px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .clock__label {
+        margin-bottom: 3rem;
+    }
 }
