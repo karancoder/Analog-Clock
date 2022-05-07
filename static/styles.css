@@ -8,10 +8,216 @@
     --body-color: hsl(var(--hue-color), 24%, 94%);
 
     --body-font: "Montserrat", sans-serif;
-    --large-font-size: 3rem;
-    --medium-font-size: 0.9rem;
-    --small-font-size: 0.7rem;
-    --tiny-font-size: 0.55rem;
+    --l-fs: 3rem;
+    --m-fs: 0.813rem;
+    --s-fs: 0.75rem;
+    --t-fs: 0.625rem;
 
-    --medium-font-weight: 500;
+    --m-fw: 500;
+
+    --mb-0-25: 0.25rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2-5: 2.5rem;
+
+    --z-normal: 1;
+    --z-tooltip: 10;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --l-fs: 3.5rem;
+        --m-fs: 0.875rem;
+        --s-fs: 0.813rem;
+        --t-fs: 0.75rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 968px;
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+}
+
+.grid {
+    display: grid;
+}
+
+.clock__container {
+    height: 100vh;
+    grid-template-rows: 1fr max-content;
+}
+
+.clock__circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: -6px -6px 16px var(--white-color),
+        6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+        inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+        inset -6px -6px 16px var(--white-color);
+    border-radius: 50%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock__content {
+    align-self: center;
+    row-gap: 3.5rem;
+}
+
+.clock__twelve,
+.clock__three,
+.clock__six,
+.clock__nine {
+    position: absolute;
+    width: 1rem;
+    height: 1px;
+    background-color: var(--text-color-light);
+}
+
+.clock__twelve,
+.clock__six {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.clock__twelve {
+    top: 1.25rem;
+    left: 50%;
+}
+
+.clock__three {
+    top: 50%;
+    right: 0.75rem;
+}
+
+.clock__six {
+    bottom: 1.25rem;
+    left: 50%;
+}
+
+.clock__nine {
+    top: 50%;
+    left: 0.75rem;
+}
+
+.clock__rounder {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    border: 2px solid var(--body-color);
+    z-index: var(--z-tooltip);
+}
+
+.clock__hour,
+.clock__minutes,
+.clock__seconds {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.clock__hour {
+    width: 105px;
+    height: 105px;
+}
+
+.clock__hour::before {
+    content: "";
+    position: absolute;
+    background-color: var(--text-color);
+    width: 0.25rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    z-index: var(--z-normal);
+}
+
+.clock__minutes {
+    width: 136px;
+    height: 136px;
+}
+
+.clock__minutes::before {
+    content: "";
+    position: absolute;
+    background-color: var(--text-color);
+    width: 0.25rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+    z-index: var(--z-normal);
+}
+
+.clock__seconds {
+    width: 130px;
+    height: 130px;
+}
+
+.clock__seconds::before {
+    content: "";
+    position: absolute;
+    background-color: var(--first-color);
+    width: 0.125rem;
+    height: 5rem;
+    border-radius: 0.75rem;
+    z-index: var(--z-normal);
+}
+
+.clock__label {
+    width: max-content;
+    justify-self: center;
+    margin-bottom: var(--mb-2-5);
+    font-size: var(--s-fs);
+    font-weight: var(--m-fw);
+    color: var(--text-color-light);
+    transition: 0.3s;
+}
+
+.clock__label:hover {
+    color: var(--first-color);
+}
+
+.clock__text {
+    display: flex;
+    justify-content: center;
+}
+
+.clock__text-hour,
+.clock__text-minutes {
+    font-size: var(--l-fs);
+    font-weight: var(--m-fw);
+    color: var(--title-color);
+}
+
+.clock__text-ampm {
+    font-size: var(--t-fs);
+    color: var(--title-color);
+    font-weight: var(--m-fw);
+    margin-left: var(--mb-0-25);
+}
+
+.clock__date {
+    text-align: center;
+    font-size: var(--s-fs);
+    font-weight: var(--m-fw);
 }

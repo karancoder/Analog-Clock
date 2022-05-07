@@ -16,6 +16,47 @@
         <title>Analog Clock</title>
     </head>
     <body>
+        <section class="clock container">
+            <div class="clock__container grid">
+                <div class="clock__content grid">
+                    <div class="clock__circle">
+                        <span class="clock__twelve"></span>
+                        <span class="clock__three"></span>
+                        <span class="clock__six"></span>
+                        <span class="clock__nine"></span>
+
+                        <div class="clock__rounder"></div>
+                        <div class="clock__hour" id="clock__hour"></div>
+                        <div class="clock__minutes" id="clock__minutes"></div>
+                        <div class="clock__seconds" id="clock__seconds"></div>
+                    </div>
+
+                    <div>
+                        <div class="clock__text">
+                            <div
+                                class="clock__text-hour"
+                                id="clock__text-hour"
+                            ></div>
+                            <div
+                                class="clock__text-minutes"
+                                id="clock__text-minutes"
+                            ></div>
+                            <div
+                                class="clock__text-ampm"
+                                id="clock__text-ampm"
+                            ></div>
+                        </div>
+                        <div class="clock__date">
+                            <span id="clock__date-day"></span>
+                            <span id="clock__date-month"></span>
+                            <span id="clock__date-year"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clock__label">Karan's Clock</div>
+            </div>
+        </section>
         <script src="./static/app.js"></script>
     </body>
 </html>
