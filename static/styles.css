@@ -1,0 +1,17 @@
+:root {
+    --hue-color: 240;
+    --first-color: hsl(var(--hue-color), 53%, 49%);
+    --title-color: hsl(var(--hue-color), 53%, 15%);
+    --text-color: hsl(var(--hue-color), 12%, 35%);
+    --text-color-light: hsl(var(--hue-color), 12%, 65%);
+    --white-color: rgb(255, 255, 255);
+    --body-color: hsl(var(--hue-color), 24%, 94%);
+
+    --body-font: "Montserrat", sans-serif;
+    --large-font-size: 3rem;
+    --medium-font-size: 0.9rem;
+    --small-font-size: 0.7rem;
+    --tiny-font-size: 0.55rem;
+
+    --medium-font-weight: 500;
+}
